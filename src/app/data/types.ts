@@ -33,8 +33,8 @@ export type ContextType = {
 };
 
 export type HeaderProps = {
-  sidebar: boolean;
-  setSidebar: React.Dispatch<React.SetStateAction<boolean>>;
+  mode: boolean;
+  setMode: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 export const GlobalContext = createContext<null | ContextType>(null);

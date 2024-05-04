@@ -26,6 +26,7 @@ const config: Config = {
       redHover: '#FF9898',
       MainPurple: '#635FC7',
       MainPurpleHover: '#A8A4FF',
+      white: '#FFF',
     },
   },
   plugins: [],
