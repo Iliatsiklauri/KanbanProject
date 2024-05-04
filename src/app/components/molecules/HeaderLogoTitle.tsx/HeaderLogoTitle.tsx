@@ -1,8 +1,11 @@
 import React from 'react';
 import Logo from '../../atoms/Logo/Logo';
 import Arrow from '../../atoms/Arrow/Arrow';
+import useData from '@/app/utils/useData';
+import { motion } from 'framer';
 
-export default function HeaderLogoTitle({ mode }: { mode: boolean }) {
+export default function HeaderLogoTitle() {
+  const { mode, AllBoardsModal, setAllBoardModal } = useData();
   return (
     <div className="flex items-center justify-center gap-4">
       <Logo />
@@ -10,7 +13,14 @@ export default function HeaderLogoTitle({ mode }: { mode: boolean }) {
         <h1 className={`text-lg font-bold ${mode ? 'text-NearBlack' : 'text-white'}`}>
           Platform Launch
         </h1>
-        <Arrow />
+        <motion.div
+          className="w-8 h-10 flex items-center justify-center cursor-pointer"
+          onClick={() => setAllBoardModal(!AllBoardsModal)}
+          animate={{ rotate: AllBoardsModal ? 180 : 0 }}
+          transition={{ type: 'tween' }}
+        >
+          <Arrow />
+        </motion.div>
       </div>
     </div>
   );
