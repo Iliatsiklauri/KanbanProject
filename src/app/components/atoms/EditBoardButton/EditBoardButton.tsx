@@ -8,6 +8,7 @@ export default function EditBoardButton() {
       height="16"
       viewBox="0 0 4 16"
       fill="none"
+      className="cursor-pointer"
     >
       <circle cx="1.84615" cy="1.84615" r="1.84615" fill="#828FA3" />
       <circle cx="1.84615" cy="8.00045" r="1.84615" fill="#828FA3" />

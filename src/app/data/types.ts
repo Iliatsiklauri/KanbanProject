@@ -1,4 +1,8 @@
-'use client';
+export type HeaderProps = {
+  mode: boolean;
+  setMode: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
 import { createContext, useState } from 'react';
 
 export type Subtask = {
@@ -23,18 +27,12 @@ export type Board = {
   columns: Column[];
 };
 
-export type Boards = {
-  boards: Board[];
-};
 export type ContextType = {
-  data: Boards;
+  data: Board[];
   mode: boolean;
+  AllBoardsModal: boolean;
   setMode: React.Dispatch<React.SetStateAction<boolean>>;
-};
-
-export type HeaderProps = {
-  mode: boolean;
-  setMode: React.Dispatch<React.SetStateAction<boolean>>;
+  setAllBoardModal: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 export const GlobalContext = createContext<null | ContextType>(null);

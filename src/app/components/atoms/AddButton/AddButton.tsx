@@ -9,7 +9,7 @@ export default function AddTaskButton({ disabled }: { disabled?: boolean }) {
       viewBox="0 0 48 32"
       fill="none"
       opacity={disabled ? 0.25 : 1}
-      className="md:hidden"
+      className="md:hidden cursor-pointer"
     >
       <rect width="48" height="32" rx="16" fill="#635FC7" />
       <path
