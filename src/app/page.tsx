@@ -10,6 +10,7 @@ export default function Page() {
   useEffect(() => {
     let filteredData = data.filter((el) => el.name === board);
     setBoardData(filteredData[0]);
+    console.log(BoardData);
   }, [board]);
   return (
     <div
@@ -18,7 +19,12 @@ export default function Page() {
       } h-full flex items-center
        justify-center`}
     >
-      {data.length > 0 ? <p>{BoardData?.name}</p> : <AddColumnButton />}
+      {data.length > 0 ? null : <AddColumnButton />}
+      <div>
+        {BoardData?.columns.map((el, i) => (
+          <p key={i}>{el.name}</p>
+        ))}
+      </div>
     </div>
   );
 }
