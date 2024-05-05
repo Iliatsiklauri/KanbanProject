@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from '../../atoms/Logo/Logo';
+import Logo from '../../../icons/Logo/Logo';
 import Arrow from '../../atoms/Arrow/Arrow';
 import useData from '@/app/utils/useData';
 import { motion } from 'framer';
