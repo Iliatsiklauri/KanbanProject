@@ -7,7 +7,7 @@ import AllBoardModalSection from '../../atoms/AllBoardsModalSection/AllBoardModa
 import AddBoardSection from '../../atoms/AddBoardSection/AddBoardSection';
 
 export default function SwitchModeModal() {
-  const { data, mode, AllBoardsModal, setAllBoardModal, setMode } = useData();
+  const { data, mode, AllBoardsModal } = useData();
 
   return (
     <motion.div
