@@ -9,15 +9,16 @@ import SwitchModeModal from '../components/organisms/SwitchModeModal/SwitchModeM
 export default function Wrapper({ children }: { children: React.ReactNode }) {
   const [data, setData] = useState(jsonData);
   const [mode, setMode] = useState(false);
+  const [board, setBoard] = useState<string | null>(null);
   const [AllBoardsModal, setAllBoardModal] = useState(false);
   return (
     <GlobalContext.Provider
-      value={{ data, mode, setMode, AllBoardsModal, setAllBoardModal }}
+      value={{ data, mode, setMode, AllBoardsModal, setAllBoardModal, board, setBoard }}
     >
       <div className="flex flex-col h-screen w-full relative">
         <Header />
         <div className="h-full">{children}</div>
-        <ModalBackGround>
+        <ModalBackGround type={1}>
           <SwitchModeModal />
         </ModalBackGround>
       </div>

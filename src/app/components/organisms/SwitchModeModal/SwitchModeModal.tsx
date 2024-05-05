@@ -2,10 +2,13 @@ import useData from '@/app/utils/useData';
 import React from 'react';
 import ColorSwitch from '../../molecules/ColorSwitch/ColorSwitch';
 import { motion } from 'framer';
-import Image from 'next/image';
+import BoardsCount from '../../atoms/BoardsCount/BoardsCount';
+import AllBoardModalSection from '../../atoms/AllBoardsModalSection/AllBoardModalSection';
+import AddBoardSection from '../../atoms/AddBoardSection/AddBoardSection';
 
 export default function SwitchModeModal() {
   const { data, mode, AllBoardsModal, setAllBoardModal, setMode } = useData();
+
   return (
     <motion.div
       animate={{
@@ -17,19 +20,14 @@ export default function SwitchModeModal() {
         mode ? 'bg-white' : 'bg-DarkGrey'
       } min-w-[264px] w-[50%] py-4 shadow-[0_10px_20px_0_rgba(54,78,126,0.25)] rounded-lg flex items-center justify-center flex-col gap-4`}
     >
-      <div className="self-start w-full pr-6">
+      <BoardsCount />
+      <div className="self-start w-full pr-6 ">
         {data?.map((el, i) => (
-          <button
-            key={i}
-            className="flex  items-center justify-start w-full active:bg-MainPurple active:text-white text-MediumGrey pl-6 gap-3 py-[15px] rounded-tr-[100px] rounded-br-[100px]"
-          >
-            {/* TODO: change image to component so we can toggle the fill atribute on button
-              active state */}
-            <Image src={'/icon-board.svg'} alt="board" height={16} width={16} />
-            <p className={` `}>{el.name}</p>
-          </button>
+          <AllBoardModalSection el={el} i={i} key={i} />
         ))}
+        <AddBoardSection />
       </div>
+
       <ColorSwitch />
     </motion.div>
   );
