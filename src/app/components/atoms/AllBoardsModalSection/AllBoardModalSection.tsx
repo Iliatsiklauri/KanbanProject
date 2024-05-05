@@ -1,7 +1,7 @@
 import { Board } from '@/app/data/types';
 import React from 'react';
-import IconBoard from '../IconBoard/IconBoard';
 import useData from '@/app/utils/useData';
+import IconBoard from '@/app/components/atoms/IconBoard/IconBoard';
 
 export default function AllBoardModalSection({ el, i }: { el: Board; i: number }) {
   const { setBoard, board } = useData();
