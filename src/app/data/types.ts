@@ -33,6 +33,8 @@ export type ContextType = {
   AllBoardsModal: boolean;
   setMode: React.Dispatch<React.SetStateAction<boolean>>;
   setAllBoardModal: React.Dispatch<React.SetStateAction<boolean>>;
+  board: string | null;
+  setBoard: React.Dispatch<React.SetStateAction<string | null>>;
 };
 
 export const GlobalContext = createContext<null | ContextType>(null);
