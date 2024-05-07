@@ -3,7 +3,7 @@ export type HeaderProps = {
   setMode: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-import { createContext, useState } from 'react';
+import { createContext } from 'react';
 
 export type Subtask = {
   title: string;
