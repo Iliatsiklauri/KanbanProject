@@ -26,7 +26,7 @@ export default function Page() {
       {data.length > 0 ? (
         <div className="flex items-start justify-start gap-6 px-4 py-6">
           {BoardData?.columns.map((el, i) => (
-            <SingleColumn name={`${el.name}`} tasks={el.tasks} key={i} />
+            <SingleColumn name={`${el.name}`} tasks={el.tasks} key={i} id={i} />
           ))}
         </div>
       ) : null}
