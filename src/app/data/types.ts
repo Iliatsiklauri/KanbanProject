@@ -3,7 +3,7 @@ export type HeaderProps = {
   setMode: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-import { createContext, useState } from 'react';
+import { createContext } from 'react';
 
 export type Subtask = {
   title: string;
@@ -18,6 +18,7 @@ export type Task = {
 };
 
 export type Column = {
+  id?: number;
   name: string;
   tasks: Task[];
 };

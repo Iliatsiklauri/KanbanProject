@@ -4,7 +4,7 @@ import useData from '@/app/utils/useData';
 import IconBoard from '@/app/icons/IconBoard/IconBoard';
 
 export default function AllBoardModalSection({ el, i }: { el: Board; i: number }) {
-  const { setBoard, board } = useData();
+  const { setBoard, board, setAllBoardModal } = useData();
   return (
     <button
       key={i}
@@ -13,6 +13,7 @@ export default function AllBoardModalSection({ el, i }: { el: Board; i: number }
       }`}
       onClick={() => {
         setBoard(el.name);
+        setAllBoardModal(false);
       }}
     >
       {el.name === board ? <IconBoard fill /> : <IconBoard />}

@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import jsonData from '@/app/data/data.json';
 import { Board, GlobalContext } from '../data/types';
 import Header from '../components/organisms/Header/Header';
@@ -15,9 +15,9 @@ export default function Wrapper({ children }: { children: React.ReactNode }) {
     <GlobalContext.Provider
       value={{ data, mode, setMode, AllBoardsModal, setAllBoardModal, board, setBoard }}
     >
-      <div className="flex flex-col h-screen w-full relative">
+      <div className="flex flex-col w-full relative">
         <Header />
-        <div className="h-full">{children}</div>
+        <div className="overflow-auto w-full">{children}</div>
         <ModalBackGround type={1}>
           <SwitchModeModal />
         </ModalBackGround>

@@ -1,8 +1,9 @@
 'use client';
 import { useEffect, useState } from 'react';
-import AddColumnButton from './components/atoms/AddColumnButton/AddColumnButton';
 import useData from './utils/useData';
 import { Board } from './data/types';
+import SingleColumn from './components/organisms/Columns/SingleColumn';
+import AddColumnButton from './components/atoms/AddColumnButton/AddColumnButton';
 
 export default function Page() {
   const { data, mode, board } = useData();
@@ -15,10 +16,20 @@ export default function Page() {
     <div
       className={`${
         mode ? 'bg-lightGreylightBg' : 'bg-veryDarkGreyDarkBg'
-      } h-full flex items-center
-       justify-center`}
+      } min-h-screen flex w-full ${
+        data.length > 0
+          ? 'items-start w-full justify-start'
+          : 'items-center justify-center'
+      } `}
     >
-      {data.length > 0 ? <p>{BoardData?.name}</p> : <AddColumnButton />}
+      <AddColumnButton />
+      {data.length > 0 ? (
+        <div className="flex items-start justify-start gap-6 px-4 py-6">
+          {BoardData?.columns.map((el, i) => (
+            <SingleColumn name={`${el.name}`} tasks={el.tasks} key={i} id={i} />
+          ))}
+        </div>
+      ) : null}
     </div>
   );
 }
