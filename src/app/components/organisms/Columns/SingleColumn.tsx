@@ -12,8 +12,10 @@ export default function SingleColumn({ name, tasks, id }: Column) {
           <div className="bg-[#67E2AE] h-[15px] w-[15px] rounded-full"></div>
         ) : data.length === Number(id) + 2 ? (
           <div className="bg-[#8471F2] h-[15px] w-[15px] rounded-full"></div>
-        ) : (
+        ) : data.length === Number(id) + 3 ? (
           <div className="bg-[#49C4E5] h-[15px] w-[15px] rounded-full"></div>
+        ) : (
+          <div className="bg-red h-[15px] w-[15px] rounded-full"></div>
         )}
         <h2 className="text-MediumGrey text-[12px] font-bold">
           {name} ({tasks.length})
