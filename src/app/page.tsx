@@ -14,9 +14,7 @@ export default function Page() {
   }, [board]);
   return (
     <div
-      className={`${
-        mode ? 'bg-lightGreylightBg' : 'bg-veryDarkGreyDarkBg'
-      } min-h-screen flex w-full ${
+      className={`min-h-screen flex w-full ${
         data.length > 0
           ? 'items-start w-full justify-start'
           : 'items-center justify-center'

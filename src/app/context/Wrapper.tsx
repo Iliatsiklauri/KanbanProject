@@ -17,7 +17,13 @@ export default function Wrapper({ children }: { children: React.ReactNode }) {
     >
       <div className="flex flex-col w-full relative">
         <Header />
-        <div className="overflow-auto w-full">{children}</div>
+        <div
+          className={` overflow-auto w-full ${
+            mode ? 'bg-lightGreylightBg' : 'bg-veryDarkGreyDarkBg'
+          }  `}
+        >
+          {children}
+        </div>
         <ModalBackGround type={1}>
           <SwitchModeModal />
         </ModalBackGround>
