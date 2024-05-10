@@ -6,7 +6,7 @@ import ColorSwitchButton from '../../atoms/ColorSwitchButton.tsx/ColorSwitchButt
 export default function ColorSwitch() {
   const { mode, setMode } = useData();
   return (
-    <div className="w-full px-4">
+    <div className="w-full px-4 md:justify-self-end">
       <div
         className={` px-4 h-12 rounded-lg flex items-center justify-center gap-6
           ${mode ? 'bg-lightGreylightBg' : 'bg-veryDarkGreyDarkBg'}`}

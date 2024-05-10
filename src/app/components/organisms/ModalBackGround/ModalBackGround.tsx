@@ -10,7 +10,11 @@ export default function ModalBackGround({
 }) {
   const { AllBoardsModal, setAllBoardModal } = useData();
   return (
-    <div className={`w-full h-full absolute ${AllBoardsModal ? 'block' : 'hidden'}`}>
+    <div
+      className={`w-full h-full md:hidden absolute ${
+        AllBoardsModal ? 'block' : 'hidden'
+      }`}
+    >
       <div className={`relative h-full w-full flex justify-start items-center `}>
         <div
           className="absolute w-full h-full bg-black opacity-50 z-0"
